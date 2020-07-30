@@ -1,11 +1,21 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk';
 
 import fetchCurrencyReducer from '../reducers/reducer'
 
+const middelewares = [thunk]
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    trace: true,
+    raceLimit: 55,
+    }) : compose;
+    
+
 const reducers = combineReducers ({
-    fetchCurrencyReducer
+    fetchCurrencyReducer,
+    
 })
 
-const store = createStore(reducers);
+const store = createStore(reducers,composeEnhancers(applyMiddleware(...middelewares)));
 
 export default store;

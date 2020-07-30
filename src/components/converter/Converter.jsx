@@ -7,8 +7,8 @@ const Converter = (props) => {
 
     const [ currencyOptions, setCurrencyOptions ] = useState(['EUR', 'USD', 'RUB'])
     const [ amountCost, setAmountCost ] = useState([83, 74, 1])
+    console.log(props.getCurrencyList());
     console.log(props)
-
     return (
       <>
         <Header>Конвертер валют</Header>

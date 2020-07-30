@@ -5,7 +5,7 @@ import { getCurrencyList } from '../actions/actions'
 
 const mapStateToProps = state => {
     return {
-        data : state
+        data : state.data
     }
 }
 
