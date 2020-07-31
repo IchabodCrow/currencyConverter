@@ -1,14 +1,14 @@
 import { GET_CURRENCY_LIST } from '../actions/actions'
 
-const fetchCurrencyReducer = ( state = [], action) => {
+const currencyReducer = ( state = [], action) => {
     switch (action.type) {
         
         case GET_CURRENCY_LIST : 
-            return [...state, action.data]
+            return action.data.ValCurs.Valute
         
         default : 
             return state
     }
 }
 
-export default fetchCurrencyReducer
+export default currencyReducer

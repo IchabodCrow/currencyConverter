@@ -2,7 +2,7 @@ export const GET_CURRENCY_LIST = "GET_CURRENCY_LIST";
 
 export const getCurrencyList = () => {
   return (dispatch) => {
-    fetch(
+    return fetch(
       "https://cors-anywhere.herokuapp.com/www.cbr.ru/scripts/XML_daily.asp"
     )
       .then(response => response.text())
@@ -10,6 +10,7 @@ export const getCurrencyList = () => {
         const parser = require('xml2json-light');
         const json = parser.xml2json(xml);
         dispatch(getCurrencyListSuccess(json));
+        return json;
       });
   };
 };

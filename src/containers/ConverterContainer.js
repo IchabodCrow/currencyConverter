@@ -3,11 +3,7 @@ import { connect } from 'react-redux'
 import Converter from '../components/converter/Converter'
 import { getCurrencyList } from '../actions/actions'
 
-const mapStateToProps = state => {
-    return {
-        data : state.data
-    }
-}
+const mapStateToProps = ({ currencies }) => ({ currencies });
 
 const mapDispatchToProps = dispatch => {
     return {

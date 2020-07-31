@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk';
 
-import fetchCurrencyReducer from '../reducers/reducer'
+import currencyReducer from '../reducers/currencies'
 
 const middelewares = [thunk]
 
@@ -12,7 +12,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DE
     
 
 const reducers = combineReducers ({
-    fetchCurrencyReducer,
+    currencies: currencyReducer,
     
 })
 

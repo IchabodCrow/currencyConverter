@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Header = styled.div`
-  width: 800px;
   height: 24px;
+  width: 195px;
   margin: 0 auto;
 
   font-family: Roboto;
@@ -12,4 +12,3 @@ export const Header = styled.div`
   line-height: 28px;
   text-align: center;
 `;
-
